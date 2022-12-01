@@ -10,7 +10,6 @@ def part_one():
                     max = current_sum
                 current_sum = 0
     return max
-
 print("Part 1: ", part_one())
 
 
@@ -26,4 +25,5 @@ def part_two():
                 current_sum = 0
         calories.sort(reverse=True)
     return sum(calories[0:3])
+
 print("Part 2: ", part_two())
