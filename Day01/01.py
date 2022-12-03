@@ -10,6 +10,7 @@ def part_one():
                     max = current_sum
                 current_sum = 0
     return max
+
 print("Part 1: ", part_one())
 
 
