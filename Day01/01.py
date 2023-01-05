@@ -6,8 +6,7 @@ def part_one():
             if line != "\n":
                 current_sum += int(line)
             else:
-                if current_sum > max:
-                    max = current_sum
+                max = max(current_sum, max)
                 current_sum = 0
     return max
 

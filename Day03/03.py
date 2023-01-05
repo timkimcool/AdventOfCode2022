@@ -6,23 +6,23 @@ def get_priority(items):
     return sum
 
 
+def get_common_items(file):
+    shared = []
+    for line in file.readlines():
+        items = {}
+        mid = len(line)//2
+        for char in line[:mid]:
+            items[char] = True
+        for char in line[mid:]:
+            if char in items:
+                shared.append(char)
+                break
+
 
 def part_one():
     with open("input.txt", "r") as file:
-        shared = []
-        # get common items
-        for line in file.readlines():
-            items = {}
-            mid = len(line)//2
-            for char in line[:mid]:
-                items[char] = True
-            for char in line[mid:]:
-                if char in items:
-                    shared.append(char)
-                    break
-        # calculate priority
+        shared = get_common_items(file)
         sum  = get_priority(shared)
-
 
     return sum
 
